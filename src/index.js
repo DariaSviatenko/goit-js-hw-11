@@ -72,8 +72,8 @@ const handleFormSubmit = async e => {
   const formData = Object.fromEntries(new FormData(e.target).entries());
   search = formData.searchQuery;
   const markup = await prepareHtml();
-  if (!markup) return;
   loadMoreBtn.style.display = 'none';
+  if (!markup) return;
   gallery.innerHTML = markup;
   loadMoreBtn.style.display = 'block';
   new SimpleLightbox('.gallery a', {});
